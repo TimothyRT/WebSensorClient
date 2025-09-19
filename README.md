@@ -8,7 +8,7 @@ features:
   - mysql
   - ssl
   - 'ssl always'
-source: 'https://github.com/TimothyRT/api-employee-photos'
+source: 'https://github.com/TimothyRT/WebSensorClient'
 nginx:
   root: public_html/app/static
   passenger:

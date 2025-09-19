@@ -8,6 +8,10 @@ else {
   const gyroscopeLabelY = document.querySelector("#gyroscope-y");
   const gyroscopeLabelZ = document.querySelector("#gyroscope-z");
 
+  console.log(gyroscopeLabelX);
+  console.log(gyroscopeLabelY);
+  console.log(gyroscopeLabelZ);
+
   gyroscope.addEventListener("reading", (e) => {
     gyroscopeLabelX.innerText = `Angular velocity along the X-axis ${gyroscope.x}`;
     gyroscopeLabelY.innerText = `Angular velocity along the Y-axis ${gyroscope.y}`;
