@@ -1,13 +1,8 @@
-from flask import Flask, render_template
+"""Application entrypoint for running the Flask web server."""
 
+from app import create_app
 
-app = Flask(__name__)
-
-
-@app.route("/")
-def sensors_basic():
-    return render_template("sensors_basic.html")
-
+app = create_app()
 
 if __name__ == "__main__":
     app.run("0.0.0.0", debug=True)
