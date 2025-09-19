@@ -28,9 +28,9 @@ else {
   const accelerationLabelZ = document.querySelector("#acceleration-z");
 
   acceleration.addEventListener("reading", (e) => {
-    accelerationLabelX.innerText = `Acceleration along the X-axis = ${gyroscope.x}`;
-    accelerationLabelY.innerText = `Acceleration along the Y-axis = ${gyroscope.y}`;
-    accelerationLabelZ.innerText = `Acceleration along the Z-axis = ${gyroscope.z}`;
+    accelerationLabelX.innerText = `Acceleration along the X-axis = ${acceleration.x}`;
+    accelerationLabelY.innerText = `Acceleration along the Y-axis = ${acceleration.y}`;
+    accelerationLabelZ.innerText = `Acceleration along the Z-axis = ${acceleration.z}`;
   });
 
   acceleration.start();
