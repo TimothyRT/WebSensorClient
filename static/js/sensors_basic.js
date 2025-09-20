@@ -4,7 +4,7 @@ const ipAddress = urlParams.get('ip');
 if (ipAddress === null) {
   alert("The Godot process's IP address was not provided in URL param!");
 } else {
-  const ws = new WebSocket(`ws://${ipAddress}:9080`);
+  const ws = new WebSocket(`wss://${ipAddress}:9080`);
   console.log(`[WebSocket] Attempted to establish WebSocket connection; IP address = ${ipAddress}`)
 
   ws.onopen = () => {
@@ -31,6 +31,7 @@ if (ipAddress === null) {
       gyroscopeLabelX.innerText = `Angular velocity along the X-axis = ${gyroscope.x}`;
       gyroscopeLabelY.innerText = `Angular velocity along the Y-axis = ${gyroscope.y}`;
       gyroscopeLabelZ.innerText = `Angular velocity along the Z-axis = ${gyroscope.z}`;
+      ws.send(`{"X": ${gyroscope.X}, "Y": ${gyroscope.Y}, "Z": ${gyroscope.Z}}`)
     });
 
     gyroscope.start();
@@ -51,6 +52,7 @@ if (ipAddress === null) {
       accelerationLabelX.innerText = `Acceleration along the X-axis = ${acceleration.x}`;
       accelerationLabelY.innerText = `Acceleration along the Y-axis = ${acceleration.y}`;
       accelerationLabelZ.innerText = `Acceleration along the Z-axis = ${acceleration.z}`;
+      ws.send(`{"X": ${acceleration.X}, "Y": ${acceleration.Y}, "Z": ${acceleration.Z}}`)
     });
 
     acceleration.start();
