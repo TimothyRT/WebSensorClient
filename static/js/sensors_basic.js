@@ -4,7 +4,7 @@ const ipAddress = urlParams.get('ip');
 if (ipAddress === null) {
   alert("The Godot process's IP address was not provided in URL param!");
 } else {
-  const ws = new WebSocket(`wss://${ipAddress}`);
+  const ws = new WebSocket(`wss://${ipAddress}:9080`);
   console.log(`[WebSocket] Attempted to establish WebSocket connection; IP address = ${ipAddress}`)
 
   ws.onopen = () => {
