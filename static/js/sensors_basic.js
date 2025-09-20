@@ -31,7 +31,7 @@ if (ipAddress === null) {
       gyroscopeLabelX.innerText = `Angular velocity along the X-axis = ${gyroscope.x}`;
       gyroscopeLabelY.innerText = `Angular velocity along the Y-axis = ${gyroscope.y}`;
       gyroscopeLabelZ.innerText = `Angular velocity along the Z-axis = ${gyroscope.z}`;
-      ws.send(`{"X": ${gyroscope.X}, "Y": ${gyroscope.Y}, "Z": ${gyroscope.Z}}`)
+      ws.send(`{"X": ${gyroscope.x}, "Y": ${gyroscope.y}, "Z": ${gyroscope.z}}`)
     });
 
     gyroscope.start();
@@ -52,7 +52,7 @@ if (ipAddress === null) {
       accelerationLabelX.innerText = `Acceleration along the X-axis = ${acceleration.x}`;
       accelerationLabelY.innerText = `Acceleration along the Y-axis = ${acceleration.y}`;
       accelerationLabelZ.innerText = `Acceleration along the Z-axis = ${acceleration.z}`;
-      ws.send(`{"X": ${acceleration.X}, "Y": ${acceleration.Y}, "Z": ${acceleration.Z}}`)
+      ws.send(`{"X": ${acceleration.x}, "Y": ${acceleration.y}, "Z": ${acceleration.z}}`)
     });
 
     acceleration.start();
